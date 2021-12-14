@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+@import "../../css/normalize";
+@import "../../css/base";
+@mixin media($size) {
+    @media screen and (min-width: $size) {
+        @content;
+    }
+}
+
+.box {
+    width: 100%;
+    padding: 0 20px;
+    border: none;
+    box-shadow: none;
+    margin: 0 auto;
+    max-width: 1140px;
+    @include media(768px) {
+        padding: 0 50px;
+    }
+}
+
+html {
+    line-height: 1.5;
+    font-weight: 400;
+    color: #000;
+    background-color: #fff;
+    text-align: left;
+    font-family: Lato, sans-serif;
+    @include media(998px) {
+        font-size: 1.1rem;
+    }
+}
+
+header {
+    width: 100%;
+    padding: .8rem 0;
+    .box {
+        @include media(380px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    img {
+        width: 10rem;
+    }
+    .menu {
+        display: none;
+        @include media(768px) {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+    }
+    .call_header {
+        color: #3742FA;
+        display: none;
+        @include media(380px) {
+            display: block;
+        }
+    }
+}
+
+.menu_mobile {
+    padding: .8rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    @include media(768px) {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        overflow-y: scroll;
+        a {
+            white-space: nowrap;
+        }
+    }
+}
+
+#main {
+    h1 {
+        text-align: center;
+    }
+    iframe {
+        height: 347px;
+        @include media(540px) {
+            height: 224px;
+        }
+        @include media(740px) {
+            height: 164px;
+        }
+        @include media(1140px) {
+            height: 104px;
+        }
+    }
+}
+
+section {
+    .box {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        @include media(740px) {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            border-radius: 1rem;
+        }
+    }
+    h2 {
+        text-align: center;
+    }
+    h2 + p {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
+
+#airlines {
+    .box {
+        background-color: #F1F3F4;
+    }
+    .airlines {
+        margin: 3rem auto 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 400px;
+        grid-gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        @include media(740px) {
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 80%;
+        }
+    }
+}
+
+#choose {
+    .items {
+        margin-top: 3rem;
+        display: grid;
+        grid-gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        @include media(740px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include media(960px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .item {
+            display: flex;
+            @include media(960px) {
+                font-size: 1.2rem;
+            }
+            img {
+                width: 80px;
+                height: fit-content;
+            }
+            .desc {
+                margin-left: 1.5rem;
+                .head {
+                    font-weight: 600;
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+    }
+}
+#support {
+    color: #fff;
+    .box {
+        background-color: #3742FA;
+    }
+    a {
+        background-color: #fff;
+        color: #000;
+        display: block;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        margin: 2rem auto 0;
+        font-weight: 600;
+        border-radius: .5rem;
+        font-size: 1.2rem;
+        max-width: 500px;
+    }
+}
+
+footer {
+    //margin-top: 5rem;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: #1f1f1f;
+    padding: 2rem 0;
+    img {
+        width: 15rem;
+    }
+    p {
+        color: #fff;
+        text-align: left;
+        margin-top: 1em;
+        margin-right: 1rem;
+        line-height: 1.8;
+        @include media(768px) {
+            font-size: 15px;
+        }
+    }
+    a {
+        text-decoration: underline;
+    }
+}
